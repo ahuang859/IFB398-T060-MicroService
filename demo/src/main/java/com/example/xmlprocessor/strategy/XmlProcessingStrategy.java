@@ -1,5 +1,7 @@
 package com.example.xmlprocessor.strategy;
 
-public interface XmlProcessingStrategy {
+import org.springframework.plugin.core.Plugin;
+
+public interface XmlProcessingStrategy extends Plugin<String> {
     String process(String xmlInput);
 }
