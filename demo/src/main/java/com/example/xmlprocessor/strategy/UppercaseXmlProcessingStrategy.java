@@ -9,9 +9,9 @@ public class UppercaseXmlProcessingStrategy implements XmlProcessingStrategy, Pl
     public String process(String xmlInput) {
         return xmlInput.toUpperCase();
     }
-
     @Override
     public boolean supports(String delimiter) {
         return "uppercase".equalsIgnoreCase(delimiter);
     }
 }
+
