@@ -4,14 +4,15 @@ import org.springframework.plugin.core.Plugin;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UppercaseXmlProcessingStrategy implements XmlProcessingStrategy, Plugin<String> {
+public class ReversalXmlProcessingStrategy implements XmlProcessingStrategy, Plugin<String> {
+
     @Override
     public String process(String xmlInput) {
-        return xmlInput.toUpperCase();
+        return new StringBuilder(xmlInput).reverse().toString();
     }
+
     @Override
     public boolean supports(String delimiter) {
-        return "uppercase".equalsIgnoreCase(delimiter);
+        return "reverse".equalsIgnoreCase(delimiter);
     }
 }
-
